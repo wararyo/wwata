@@ -1,0 +1,25 @@
+$z:(
+	image-back,
+	contents,
+	image-fore,
+	nav,
+	section-header-sp,
+	nav-top-sp,
+	hamburger-sp
+);
+
+
+.navigation {
+	z-index: index($z, nav);
+}
+
+@include mq(tl){
+}
+@include mq(sp){
+	.nav-top {
+		z-index: index($z, nav-top-sp);
+	}
+	.hamburger-mobile {
+		z-index: index($z, hamburger-sp);
+	}
+}

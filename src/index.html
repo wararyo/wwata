@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>新入生歓迎ページ - Qpic</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <!-- OGP -->
+    <head prefix="og: http://ogp.me/ns# website: http://ogp.me/ns/website#">
+	<meta property="og:title" content="新入生歓迎ページ - Qpic" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="http://qpic.jp/shinkan" />
+	<meta property="og:image" content="http://qpic.jp/shinkan/images/common/ogp.png" />
+	<meta property="og:site_name" content="Qpic" />
+	<meta property="og:description" content="2019年度新入生のみなさんにQpicを案内します。" />
+	<!-- TwitterCard -->
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:image" content="http://qpic.jp/shinkan/images/common/ogp.png" />
+
+    <meta name="theme-color" content="#FEDF00">
+    <!-- Vue.js -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+
+  </head>
+  <body>
+	<header class="header">
+	  <div class="header_main">
+	    <div class="header_text">
+	      <p>好きなものを作ろう。</p>
+	      <p><span>ゲーム制作サークル</span></p>
+	      <img routerLink="/" class="header_qpic_logo" src="images/header/qpic_logo.svg" alt="Qpic 九州大学物理研究部  ">
+	    </div>
+	    <div class="header_bgimage_wrapper">
+	      <div class="header_bgimage">
+	        <img src="images/header/header_circle_brown.svg">
+	        <img src="images/header/header_circle_white.svg">
+	        <img src="images/header/header_circle_orange.svg">
+	      </div>
+	    </div>
+	  </div>
+	</header>
+	<div id="wrapper" class="navigation-wrapper">
+	<a class="hamburger-mobile" onclick="toggleNav()"><img src="images/navigation/hamburger.svg" alt="メニュー"></a>
+	<nav id="nav" class="navigation" v-bind:class="{'shown-in-mobile': shownInMobile}">
+		<div class="container-wide">
+			<ul>
+				<li v-if="isPhone" class="toolbar-mobile"><a v-on:click="shownInMobile = !shownInMobile">{{currentSectionName}}</a></li>
+				<li class="nav-top" v-on:click="shownInMobile = false":class="{'is-hidden': !isPhone && currentSection == -1}"><a href="#"><img src="images/navigation/top-icon.svg" width="32" alt="トップへ"></a></li>
+				<li class="nav-events" v-bind:class="{active: currentSection == 0}" v-on:click="shownInMobile = false"><a href="#events"><i class="fa-calendar-alt fa"></i>新歓イベント</a></li>
+				<li class="nav-about" :class="{active: currentSection == 1}" v-on:click="shownInMobile = false"><a href="#about"><i class="fa-child fa"></i>Qpicって？</a></li>
+				<li class="nav-activity" :class="{active: currentSection == 2}" v-on:click="shownInMobile = false"><a href="#activity"><i class="fa-walking fa"></i>主な活動</a></li>
+				<li class="nav-qa" :class="{active: currentSection == 3}" v-on:click="shownInMobile = false"><a href="#qa"><i class="fa-question fa"></i>Q&A</a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<div class="message">
+		<div class="message-header">
+			<i class="fa fa-star"></i>
+			<div class="message-header-inner"><span>Qpicへ</span><span>ようこそ！</span></div>
+		</div>
+		<div class="content">
+			<p>Qpic（正式名称：九州大学物理研究部）は、PCを使ったゲーム制作をはじめとして、<br>プログラミング、イラストやDTMなど、様々な活動を行っている九州大学公認のサークルです。</p>
+			<p>新入生の皆さんにQpicのことを知っていただくために、たくさんのイベントをご用意しています。ぜひお越しください！</p>
+		</div>
+		<div class="message-header">
+			<h3><span>新歓レク</span><span>中止のお知らせ</span></h3>
+		</div>
+		<div class="content">
+			<p>4/28に予定しておりました新歓レクリエーションは中止となりました。</p>
+			<p>楽しみにしていた方、申し訳ございません。</p>
+		</div>
+	</div>
+
+	<a class="join-button" href="https://forms.gle/vxcbdPvPFYiyK7ke8"><i class="fa-handshake fa"></i>入部する</a>
+	<div style="width: 80%; max-width: 1080px; margin: 0 auto; text-align: right;"><img style="margin: -8px 0 -26px; -webkit-filter: drop-shadow( 1px 1px 2px rgba(0, 0, 0, .2) );" src="images/common/F.svg" width="160"></div>
+
+	<div class="events" id="events">
+		<h2>新歓イベント</h2>
+		<table>
+			<thead>
+				<tr>
+					<th>Date</th>
+					<th>Event</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						<span class="date">4/8</span>
+						at 2203 
+						<span class="date">4/11</span>
+						at 2201
+					</td>
+					<td>
+						<div class="events-event-wrapper">
+						<div class="image">
+							<img src="images/events/img1.jpg">
+						</div>
+						<div class="events-content">
+							<h3>新入生向けガイダンス</h3>
+							<div class="meta">
+								<span>Qpicの活動を知ろう</span>
+							</div>
+							<div class="description">
+								<p>Qpicに興味がある、またはQpicに入部したいという方のために、新歓ガイダンスを行います。</p>
+								<p>Qpicで何をする？　どんな雰囲気？　入部するには？　様々なことをお知らせします。 この場で入部届を提出することはありませんので気楽に参加してください。</p>
+								<p>また、ガイダンス後にはQpicが製作したゲームの試遊会を開きます。先輩部員たちの作品をご覧になってください。
+								途中参加・途中退出ももちろんOKです。お待ちしております。</p>
+							</div>
+							<ul>
+								<li>
+									<span>4/8(月)</span>
+									<span>18:40 ~ 19:20, 19:20 ~ 20:10 2203教室</span>
+								</li>
+								<li>
+									<span>4/11(木)</span>
+									<span>18:40 ~ 19:20, 19:20 ~ 20:10 2201教室</span>
+								</li>
+							</ul>
+						</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td class="canceled">
+						<span class="date">4/28</span> at 2201
+					</td>
+					<td style="position: relative;">
+						<div class="events-event-wrapper canceled">
+						<div class="image">
+							<img src="images/events/img2.jpg">
+						</div>
+						<div class="events-content">
+							<h3>新歓レクリエーション</h3>
+							<div class="meta">
+								<span>部員や同じ新入生と仲良くなろう</span>
+							</div>
+							<div class="description">
+								<p>Qpicに興味がある、入部しようかなと思っている、という方向けに、新入生や現部員との交流の場を用意しました。</p>
+								<p>Qpic部員や、一緒に参加する新入生と一緒にゲームで遊びましょう！！！自分と同じサークルに入る人と仲良くなれるかもしれませんね！</p>
+								</p>
+							</div>
+						</div>
+						</div>
+						<p style="position: absolute; top: 40%; background-color: #FFF; padding: 4px 16px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,.2);">今年の新歓レクリエーションは中止となりました。</p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						未定
+					</td>
+					<td>
+						<div class="events-event-wrapper">
+						<div class="image">
+							<img src="images/events/img3.jpg">
+						</div>
+						<div class="events-content">
+							<h3>新歓コンパ</h3>
+							<div class="meta">
+								<span>親睦を深めよう</span>
+							</div>
+							<div class="description">
+								<p>Qpicに入部を決めた方とさらに交流を深めるために、一緒にごはんを食べる機会をもうけました。</p>
+								<p>ご飯を食べながら、自分の好きなことやQpicでやりたいことについて語りましょう！</p>
+								</p>
+							</div>
+							<div class="extra">入部を決めた方に限り参加できます。新入生は無料です。</div>
+						</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<span>入部後</span>
+					</td>
+					<td>
+						<div class="events-event-wrapper">
+						<div class="image">
+							<img src="images/events/img4.jpg">
+						</div>
+						<div class="events-content">
+							<h3>講座</h3>
+							<div class="meta">
+								<span>部員のワザ、伝授します</span>
+							</div>
+							<div class="description">
+								<p>Qpic新入部員に、プログラミングやイラスト、DTMなど創作に必要な能力を、デキる部員が伝授します！</p>
+								<p>創作は初めてという方から経験者まで、ともに技能を高め合いましょう！</p>
+							</div>
+						</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<span>入部後</span>
+					</td>
+					<td>
+						<div class="events-event-wrapper">
+						<div class="image">
+							<img src="images/events/img5.jpg">
+						</div>
+						<div class="events-content">
+							<h3>QGJ</h3>
+							<div class="meta">
+								<span>2日でゲームを作ろう</span>
+							</div>
+							<div class="description">
+								<p>
+									Qpicに入部して最初に訪れる一大イベントが、2日でゲームを作り上げるQGJ ― Qpic Game Jam ― です。
+								</p>
+								<p>
+									不安でも大丈夫！わからないことがあっても、先輩部員がしっかりサポートします！
+								</p>
+							</div>
+						</div>
+						</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="about" id="about">
+		<h2>Qpicってどんなサークル？</h2>
+        <p>九州大学物理研究部、通称Qpicは、自作ゲームを始めとしてドット絵やイラスト、DTM、シナリオなど、 PCを使った自由な作品づくりを行う創作サークルです。</p>
+        <h2 id="activity">Qpicの主な活動</h2>
+        <h3>Qpic Game Jam</h3>
+	    	<img width="320" src="http://qpic.jp/img/pic/QGJ.JPG">
+	        <p>
+	            主な活動の1つとして、年に数回行われる<strong>Qpic Game Jam</strong>（以下QGJ）というゲーム制作企画があります。
+	        </p>
+	        <p>
+	            QGJとは、年に1回世界の各地で行われる世界最大のゲーム制作ハッカソン、Global Game Jam（通称GGJ）を、
+	            サークル内で模擬的にやろうという試みです。部員一人ひとりの役割を決めた後、それぞれの役割ごとに無作為に選出された部員でチームを組み、数日間、時には泊まりこみでゲームを作ります。
+	        </p>
+	        <p>
+	            役割は主なものではプログラマー、グラフィッカー、そしてDTMerの3つです。他にも、シナリオライターやデバッガーなどもあります。
+	        </p>
+	        <p>
+	            これまでに多種多様なゲーム、そして伝説が生まれてきました。公開できるものはContents内で公開しておりますので、是非一度遊んでみてください。
+	        </p>
+        <h3>創作講座</h3>
+            <img width="320" src="http://qpic.jp/img/pic/lecture.JPG">
+            <p>
+                QGJで良いゲームを作るには、高い能力が必要です。ああいうのが創りたいけど、どうしていいか分からないという方も多いでしょう。そこでQpicでは、そういった方々のために<strong>創作講座</strong>を開いています。
+            </p>
+            <p>
+                優れた能力を持った部員がその技と知識を共有し、より良いコンテンツの創作を目指します。先輩が後輩の講座を受けるといったことも珍しくありません。
+            </p>
+            <p>
+                講座内容はQGJと同じく主に3つ。プログラミング、グラフィック、そしてDTMです。またこれに加えて、近いうちに新たな内容が加わる予定です。
+            </p>
+        <h3>ゲームセンターQpic</h3>
+            <img width="320" src="http://qpic.jp/img/pic/gcq.jpg">
+            <p>
+                毎年行われる九大祭では、Qpicは教室を一部屋借りて<strong>ゲームセンターQpic</strong>を開いております。
+            </p>
+            <p>
+                QGJにて制作したゲームを始めとして、サークル内で単独あるいは非公式で制作したゲームを展示している他、オリジナル曲やアレンジ曲の販売も行っています。
+            </p>
+            <p>
+                このサイトには載せていない（載せられない）物もありますので、九大祭開催の際には是非ゲームセンターQpicへお越しください。写真のようにコスプレした部員があなたをお待ちします。
+            </p>
+        <h3>レクリエーション</h3>
+            <img width="320" src="http://qpic.jp/img/pic/recreation.JPG">
+            <p>
+                また私達は、新入生歓迎会などと銘打って年に数回<strong>レクリエーション</strong>を行っています。
+            </p>
+            <p>
+                教室を借り、皆でボードゲームや麻雀卓、家庭用ゲーム機などを持ち寄り、遊びます。
+            </p>
+            <p>
+                これは活動というよりも、むしろただの遊びに近いです。明確な目的なども持ちません。サークルに入って間もない方、あるいは入ろうと検討している方も、このレクリエーションを機に先輩方と仲良くなりましょう。
+            </p>
+            <div style="clear: both;"></div>
+	</div>
+	<div class="qa" id="qa">
+		<h2>Qpic Q&A</h2>
+
+		<h3 class="question">初心者でも大丈夫？</h3>
+		<h3 class="answer">もちろんです！</h3>
+		<p class="answerdesc">むしろ、新入部員の多くは初心者です。Qpicでは講座を開いたり、日々の活動で部員が教え合ったりしているので、活動に参加していけばどんどんスキルアップできます。</p>
+
+		<h3 class="question">部としての活動頻度は？</h3>
+		<h3 class="answer">毎週金曜日に伊都で部会があります。</h3>
+		<p class="answerdesc">それ以外では、休日や長期休暇にゲーム制作企画などさまざまなことを行っています。部会は重要な連絡があるほか、週に一度の部員が顔を合わせる機会でもあるので、なるべく参加しましょう。</p>
+
+		<h3 class="question">２年次から伊都以外のキャンパスで授業を受けることになるけど大丈夫？</h3>
+		<h3 class="answer">大丈夫です！</h3>
+		<p class="answerdesc">伊都での部会の内容はメール等で配信されます。また、普段の活動もインターネット越しに行われることが多く、キャンパスが離れていても共同制作を行う部員は多いです。さらに、大橋キャンパスを拠点に活動するサークル「impression!」と連携していますので、そこでも１年次と同様にQpicの仲間と活動することができます！</p>
+
+		<h3 class="question">兼部（他のサークルと同時加入）できる？</h3>
+		<h3 class="answer">できます。</h3>
+		<p class="answerdesc">前述の通り、部会に出られなくても、部会の内容をメール等で配信しているので大丈夫です。</p>
+
+		<h3 class="question">お金はかかる？</h3>
+		<h3 class="answer">部費がかかります。</h3>
+		<p class="answerdesc">初めて入部した年度に関しては部費は1000円/年です。また、例年行っている合宿(自由参加)に参加するには移動・宿泊費が必要です。</p>
+
+		<h3 class="question">質問はどこにすればいい？</h3>
+		<h3 class="answer">QpicのメールかTwitter、または部員に直接ご質問ください。</h3>
+		<p class="answerdesc">メール：<a href="mailto:contact@qpic.jp">contact@qpic.jp</a><br/>
+			Qpic新歓Twitterアカウント：<a href="https://twitter.com/Qpic_shinkan">@Qpic_shinkan</a><br/>
+			Qpic部員は黄色いパーカーが目印です。<br/>
+		入部前に不安は解消してしまいましょう！</p>
+	</div>
+
+	<a class="join-button" href="https://forms.gle/vxcbdPvPFYiyK7ke8"><i class="fa-handshake fa"></i>入部する</a>
+
+	<footer class="footer">
+		<div class="footer-content" >
+		    <div class="footer-pane">
+		        <ul>
+		            <li><a href="http://qpic.jp/">トップ</a></li>
+		            <li><a href="http://qpic.jp/public/news">ニュース</a></li>
+		            <li><a href="http://qpic.jp/public/pages/about">活動内容</a></li>
+		        </ul>
+		    </div>
+		    <div class="footer-pane">
+		        <ul>
+		            <li>コンテンツ
+		                <ul>
+		                    <li><a href="http://qpic.jp/public/games">ゲーム</a></li>
+		                    <li><a href="http://qpic.jp/public/graphics">グラフィック</a></li>
+		                    <li><a href="http://qpic.jp/public/musics">音楽</a></li>
+		                    <li><a href="http://qpic.jp/public/contents">その他</a></li>
+		                </ul>
+		            </li>
+		            <!--<li><a href="account">My Qpic</a></li> -->
+		        </ul>
+		    </div>
+		    <div class="footer-pane copyright">
+		        <img class="qpic-logo" src="images/footer/Logo_footer.svg" height="48px">
+		        <p>九州大学物理研究部</p>
+		        <a href="mailto:contact@qpic.jp">contact@qpic.jp</a>
+		        <p>Qpic all rights reserved.</p>
+		    </div>
+		</div>
+	</footer>
+	</div><!-- navigation-wrapper -->
+
+    <!-- Scripts -->
+    <script src="js/script.js"></script>
+
+    <!-- SweetScroll -->
+    <script src="https://unpkg.com/sweet-scroll/sweet-scroll.min.js"></script>
+    <script>
+    	const sweetScroll = new SweetScroll({
+  			trigger: "a[href^='#']",
+  			offset: isPhone() ? -360 : -80,
+  			duration: 500
+		});
+    </script>
+
+    <!-- SVG Effect -->
+    <svg height="0" style="display: none">
+	<filter id="drop-shadow">
+        <feGaussianBlur in="SourceAlpha" stdDeviation="4"></feGaussianBlur>
+        <feColorMatrix result="matrixOut" in="offOut" type="matrix" values="1 0 0 0 0
+                0 1 0 0 0
+                0 0 1 0 0
+                0 0 0 0.25 0"></feColorMatrix>
+        <feOffset dx="0" dy="2" result="offsetblur"></feOffset>
+        <feMerge>
+            <feMergeNode></feMergeNode>
+            <feMergeNode in="SourceGraphic"></feMergeNode>
+        </feMerge>
+    </filter>
+	</svg>
+  </body>
+</html>
