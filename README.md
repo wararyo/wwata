@@ -7,5 +7,5 @@ wararyoの手直しの利く非同期なWordpressテーマ
 
 ```
 npm install
-gulp dist
+npm run dist
 ```

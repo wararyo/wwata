@@ -4,7 +4,7 @@
   "description": "wararyo's wordpress alterable theme of asynchrony",
   "main": "gulpfile.js",
   "scripts": {
-    "start": "gulp start",
+    "dev": "gulp start",
     "dist": "gulp dist"
   },
   "repository": {
@@ -23,12 +23,13 @@
   "devDependencies": {
     "browser-sync": "^2.18.13",
     "gulp": "^4.0.0",
-    "gulp-autoprefixer": "^4.0.0",
+    "gulp-autoprefixer": "^6.0.0",
     "gulp-frontnote": "^2.0.1",
     "gulp-notify": "^3.0.0",
     "gulp-plumber": "^1.1.0",
-    "gulp-sass": "^3.1.0",
+    "gulp-sass": "^4.0.2",
     "gulp-sass-glob": "^1.0.8",
-    "gulp-uglify": "^3.0.0"
+    "gulp-uglify": "^3.0.0",
+    "tar": "^4.4.8"
   }
 }
