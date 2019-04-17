@@ -1,9 +1,18 @@
+/*
+#overview
+Sidebar
+
+サイドバーおよびサイドバーに格納されたウィジェットです。
+*/
+
 .sidebar {
 	width: $sidebar-width;
 
 	.widget {
 		margin-bottom: 24px;
+		padding: 16px;
 		background-color: $white;
 		border-radius: 2px;
+		box-shadow: 0 5px 10px rgba($black,.1);
 	}
 }

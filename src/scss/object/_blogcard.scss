@@ -1,0 +1,64 @@
+/*
+#overview
+BlogCard
+
+記事内に別の記事のリンクを貼り付けたいときに用いるカードです。
+*/
+
+/* ブログカード */
+.blogcard {
+    /*-webkit-box-shadow: 0 0 6px rgba(0, 0, 0, .2);*/
+    /*box-shadow: 0 0 6px rgba(0, 0, 0, .2);*/
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border: solid 3px #F2F1F3;
+    margin-top: 10px;
+    padding: 10px;
+    width: 100%;
+
+    .blogcard-link {
+        align-items: center;
+        display: flex;
+        &:hover img {
+          -webkit-transform: scale(1.15);
+          transform: scale(1.15);
+        }
+    }
+    .blogcard-content {
+      flex: 1;
+      padding-right: 10px;
+    }
+    .blogcard-img {
+      height: 120px;
+      margin: 0 20px 0 0;
+      overflow: hidden;
+      width: 120px;
+      > img {
+        height: 100%;
+        margin: 0;
+        -webkit-transition: -webkit-transform .5s 0s ease-in-out;
+        transition: -webkit-transform .5s 0s ease-in-out;
+        transition: transform .5s 0s ease-in-out;
+        transition: transform .5s 0s ease-in-out, -webkit-transform .5s 0s ease-in-out;
+        width: 100%;
+        will-change: transform;
+      }
+    }
+    .blogcard-title {
+      font-size: 1.25rem;
+      margin: 0;
+      padding: 0;
+      -webkit-transition: color .3s 0s ease-in-out;
+      transition: color .3s 0s ease-in-out;
+      &:before {
+        display: none;
+      }
+    }
+    .blogcard-date {
+      color: #666;
+      display: block;
+      font-size: 0.75rem;
+      font-weight: 200;
+      margin-top: 8px;
+    }
+}

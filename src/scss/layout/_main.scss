@@ -1,5 +1,13 @@
+/*
+#overview
+Main
+
+記事一覧や記事本文、コメント欄などが含まれる部分です。
+*/
+
 main {
 	width: calc(100% - #{$sidebar-width} - 24px);
 	background-color: $white;
 	border-radius: 4px;
+	box-shadow: 0 5px 10px rgba($black,.1);
 }

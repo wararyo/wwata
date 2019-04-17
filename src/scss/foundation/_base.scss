@@ -1,3 +1,10 @@
+/*
+#overview
+Base
+
+CSSリセットのRessとは別に全体の見た目を指定しています。
+*/
+
 * {
 	-webkit-font-smoothing: antialiased;
 	font-family: 'Noto Sans JP', "Helvetica Neue", Helvetica, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
@@ -18,6 +25,10 @@ a {
 }
 a:hover {
 	color: $link-color-hover;
+}
+
+svg {
+  fill: currentColor;
 }
 
 @include mq(sp){
