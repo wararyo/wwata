@@ -9,15 +9,15 @@
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <!-- OGP -->
     <head prefix="og: http://ogp.me/ns# website: http://ogp.me/ns/website#">
-	<meta property="og:title" content="{{Title}}" />
-	<meta property="og:type" content="website" />
-	<meta property="og:url" content="{{url}}" />
-	<meta property="og:image" content="{{ogp}}" />
-	<meta property="og:site_name" content="{{site_name}}" />
-	<meta property="og:description" content="{{description}}" />
-	<!-- TwitterCard -->
-	<meta name="twitter:card" content="summary_large_image" />
-	<meta name="twitter:image" content="{{ogp}}" />
+    <meta property="og:title" content="{{Title}}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{url}}" />
+    <meta property="og:image" content="{{ogp}}" />
+    <meta property="og:site_name" content="{{site_name}}" />
+    <meta property="og:description" content="{{description}}" />
+    <!-- TwitterCard -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="{{ogp}}" />
 
     <meta name="theme-color" content="{{color}}">
     <!-- Vue.js -->
@@ -25,28 +25,293 @@
 
   </head>
   <body>
-	<header class="header">
-	  
-	</header>
-	<div id="wrapper" class="navigation-wrapper">
-	<a class="hamburger-mobile" onclick="toggleNav()"><img src="images/navigation/hamburger.svg" alt="メニュー"></a>
-	<nav id="nav" class="navigation" v-bind:class="{'shown-in-mobile': shownInMobile}">
-		<ul>
-			<li><a href="#">トップ</a></li>
-			<li><a href="#">メニュー1</a></li>
-			<li><a href="#">メニュー2</a></li>
-		</ul>
-	</nav>
+    <header>
+        <div class="header-inner">
+            <h1><a href="{{url}}">{{title}}</a></h1>
+            <span class="header-description">{{description}}</span>
+        </div>
+    </header>
+    <a class="hamburger-mobile" onclick="toggleNav()"><img src="images/navigation/hamburger.svg" alt="メニュー"></a>
+    <nav id="nav">
+        <ul>
+            <li><a href="#">トップ</a></li>
+            <li><a href="#">メニュー1</a></li>
+            <li><a href="#">メニュー2</a></li>
+        </ul>
+    </nav>
+    <div id="wrapper" class="wrapper">
+    <main>
+        <article class="article">
+            <div class="article-eyecatch-container">
+                <img src="images/article/test-eyecatch.jpg" alt="" class="article-eyecatch-background">
+                <img src="images/article/test-eyecatch.jpg" alt="" class="article-eyecatch">
+                <ol id="breadcrumb" class="breadcrumb"><li><a href="https://godios.simmon.design/">ホーム</a></li><li><a href="https://godios.simmon.design/category/usage/">使い方</a></li><li><a href="https://godios.simmon.design/category/usage/design/">デザイン</a></li></ol>
+                <h1>JDSound “OVO”を早速使ってみたらミックスの違いを暴かれた話</h1>
+                <div class="article-meta">
+                    <ul class="article-categories">
+                        <li><a href="https://godios.simmon.design/category/usage/design/">デザイン</a></li>
+                    </ul>
+                    <span class="created-date">2018年4月3日</span>
+                    <span class="updated-date">
+                    <time datetime="2018-05-31T12:20:17+09:00">2018年5月31日</time>
+                    </span>
+                </div>
+            </div>
+            <div class="article-content">
+
+            <h2 id="1">タグデザイン</h2>
+
+            <h3 id="1-1">見出し</h3>
+            <h2>見出し2（h2）</h2>
+            <h3>見出し3（h3）</h3>
+            <h4>見出し4（h4）</h4>
+            <h5>見出し5（h5）</h5>
+            <h6>見出し6（h6）</h6>
+
+            <h3 id="1-2">テーブル</h3>
+            <table>
+              <thead>
+                <tr>
+                  <th>ヘッダー 1</th>
+                  <th>ヘッダー 2</th>
+                  <th>ヘッダー 3</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>内容 1</td>
+                  <td>内容 2</td>
+                  <td>内容 3</td>
+                </tr>
+                <tr>
+                  <td>内容 1</td>
+                  <td>内容 2</td>
+                  <td>内容 3</td>
+                </tr>
+                <tr>
+                  <td>内容 1</td>
+                  <td>内容 2</td>
+                  <td>内容 3</td>
+                </tr>
+                <tr>
+                  <td>内容 1</td>
+                  <td>内容 2</td>
+                  <td>内容 3</td>
+                </tr>
+                <tr>
+                  <td>内容 1</td>
+                  <td>内容 2</td>
+                  <td>内容 3</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td>フッター 1</td>
+                  <td>フッター 2</td>
+                  <td>フッター 3</td>
+                </tr>
+              </tfoot>
+            </table>
+
+            <table>
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>ヘッダー 1</th>
+                  <th>ヘッダー 2</th>
+                  <th>ヘッダー 3</th>
+                </tr>
+                </thead>
+              <tbody>
+                <tr>
+                  <th>ヘッダー 1</th>
+                  <td>内容1</td>
+                  <td>内容2</td>
+                  <td>内容3</td>
+                </tr>
+                <tr>
+                  <th>ヘッダー 2</th>
+                  <td>内容1</td>
+                  <td>内容2</td>
+                  <td>内容3</td>
+                </tr>
+                <tr>
+                  <th>ヘッダー 3</th>
+                  <td>内容1</td>
+                  <td>内容2</td>
+                  <td>内容3</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h3 id="1-3">引用</h3>
+            <blockquote cite="https://ja.wikipedia.org/wiki/HTML5">
+              <span>文書の文字コードにはUTF-8を推奨している。文書の文字コードの指定は、meta要素におけるcharset属性で指定する。これとHTTPレスポンスヘッダーのcontent-typeでエンコード宣言が省略された場合はUTF-8が既定となる。またcharset属性を含めたmeta要素は文章先頭から1024バイト以内に記載する必要がある。</p>
+              <p class="cite-link">
+                <cite>
+                  <a href="https://ja.wikipedia.org/wiki/HTML5" target="_blank" rel="noopener noreferrer" class="link-icon">HTML5 – Wikipedia</a>
+                </cite>
+              </p>
+            </blockquote>
+
+            <h3 id="1-4">説明リスト</h3>
+            <dl>
+              <dt>Godios.</dt>
+              <dd>
+                2018年にリリースされた無料のWordPressテーマ。高速画面遷移・内部SEO対策・100%レスポンシブなどが主な特徴。
+              </dd>
+            </dl>
+
+            <h3 id="1-5">リスト</h3>
+            <ul>
+            <li>ulリスト1</li>
+            <li>ulリスト2</li>
+            <li>ulリスト3</li>
+            <li>ulリスト4</li>
+            </ul>
+            <p>例)</p><pre><code>&lt;ul&gt;
+                &lt;li&gt;ulリスト1&lt;/li&gt;
+                &lt;li&gt;ulリスト2&lt;/li&gt;
+                &lt;li&gt;ulリスト3&lt;/li&gt;
+                &lt;li&gt;ulリスト4&lt;/li&gt;
+            &lt;/ul&gt;</code></pre>
+
+            <ol>
+            <li>olリスト1</li>
+            <li>olリスト2</li>
+            <li>olリスト3</li>
+            <li>olリスト4</li>
+            </ol>
+
+            <p>例)</p><pre><code>&lt;ol&gt;
+                &lt;li&gt;olリスト1&lt;/li&gt;
+                &lt;li&gt;olリスト2&lt;/li&gt;
+                &lt;li&gt;olリスト3&lt;/li&gt;
+                &lt;li&gt;olリスト4&lt;/li&gt;
+            &lt;/ol&gt;</code></pre>
 
 
-	<footer class="footer">
-		<div class="footer-content" >
-		    <div class="footer-pane copyright">
-		        <p>&copy; {{Name}}.</p>
-		    </div>
-		</div>
-	</footer>
-	</div><!-- navigation-wrapper -->
+            <h3 id="1-6">リンク</h3>
+            <p><a href="#">通常リンク</a></p>
+            <p><a href="#" class="link-icon">link-iconクラスを付けたリンク</a></p>
+            <p>例)</p><pre><code>&lt;a href="#" class="link-icon"&gt;リンクアイコンを付けたいリンク&lt;/a&gt;</code></pre>
+
+            <h3 id="1-7">下線</h3>
+            <p><span class="underline">underlineクラスを付けると下線が追加されます。</span></p>
+            <p>例)</p><pre><code>&lt;span class="underline"&gt;下線を付けたい文字&lt;/span&gt;</code></pre>
+
+            <p><span class="underline blue">ブルーの下線文字</span></p>
+            <pre><code>&lt;span class="underline blue"&gt;ブルーの下線文字&lt;/span&gt;</code></pre>
+
+            <p><span class="underline green">グリーンの下線文字</span></p>
+            <pre><code>&lt;span class="underline green"&gt;グリーンの下線文字&lt;/span&gt;</code></pre>
+
+            <p><span class="underline yellow">イエローの下線文字</span></p>
+            <pre><code>&lt;span class="underline yellow"&gt;イエローの下線文字&lt;/span&gt;</code></pre>
+
+            <p><span class="underline pink">ピンクの下線文字</span></p>
+            <pre><code>&lt;span class="underline pink"&gt;ピンクの下線文字&lt;/span&gt;</code></pre>
+
+            <p><span class="underline orange">オレンジの下線文字</span></p>
+            <pre><code>&lt;span class="underline orange"&gt;オレンジの下線文字&lt;/span&gt;</code></pre>
+
+            <p><span class="underline gray">グレーの下線文字</span></p>
+            <pre><code>&lt;span class="underline gray"&gt;グレーの下線文字&lt;/span&gt;</code></pre>
+
+
+            <h3 id="1-8">マーカー</h3>
+            <p><span class="marker">markerクラスを付けるとマーカーが引けます。</span></p>
+
+            <p>例)</p><pre><code>&lt;span class="marker"&gt;マーカーを引きたい文字&lt;/span&gt;</code></pre>
+
+            <p><span class="marker blue">ブルーのマーカー文字</span></p>
+            <pre><code>&lt;span class="marker blue"&gt;ブルーのマーカー文字&lt;/span&gt;</code></pre>
+
+            <p><span class="marker green">グリーンのマーカー文字</span></p>
+            <pre><code>&lt;span class="marker green"&gt;グリーンのマーカー文字&lt;/span&gt;</code></pre>
+
+            <p><span class="marker yellow">イエローのマーカー文字</span></p>
+            <pre><code>&lt;span class="marker yellow"&gt;イエローのマーカー文字&lt;/span&gt;</code></pre>
+
+            <p><span class="marker pink">ピンクのマーカー文字</span></p>
+            <pre><code>&lt;span class="marker pink"&gt;ピンクのマーカー文字&lt;/span&gt;</code></pre>
+
+            <p><span class="marker orange">オレンジのマーカー文字</span></p>
+            <pre><code>&lt;span class="marker orange"&gt;オレンジのマーカー文字&lt;/span&gt;</code></pre>
+
+            <p><span class="marker gray">グレーのマーカー文字</span></p>
+            <pre><code>&lt;span class="marker gray"&gt;グレーのマーカー文字&lt;/span&gt;</code></pre>
+
+
+            <h3 id="1-9">文字の大きさ</h3>
+            <p><span class="fs20">fs20クラスを付けた文字</span></p>
+            <p><span class="fs25">fs25クラスを付けた文字</span></p>
+            <p><span class="fs30">fs30クラスを付けた文字</span></p>
+
+
+            <p>例)</p><pre><code>&lt;span class="fs25"&gt;大きくしたい文字&lt;/span&gt;</code></pre>
+
+            <h2 id="2">コンテンツデザイン</h2>
+
+            <h3 id="2-1">イメージ</h3>
+            <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="https://godios.simmon.design/wp-content/uploads/2018/04/sunflower.jpg" class="lazyload" title="ハンバーガー" alt="サンプルイメージ">
+
+            <h3 id="2-2">ビデオ</h3>
+            <div class="iframe-wrap">
+              <iframe class="lazyload" data-src="https://www.youtube.com/embed/FlsCjmMhFmw?rel=0&amp;controls=0&amp;showinfo=0" title="YouTube Rewind: The Shape of 2017 - YouTube" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+              <div class="loading-indicator"></div>
+            </div>
+
+            <div class="iframe-wrap">
+              <iframe class="lazyload" data-src="//www.dailymotion.com/embed/video/x549fzv" title="Downhill MTB on Utah's King Kong Trail by Supermoon Light - dailymotion" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+              <div class="loading-indicator"></div>
+            </div>
+
+            <h3 id="2-3">Google マップ</h3>
+            <div class="iframe-wrap">
+              <iframe class="lazyload" data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.8308288652115!2d139.76486291525876!3d35.68116728019435!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188bfbd89f700b%3A0x277c49ba34ed38!2z5p2x5Lqs6aeF!5e0!3m2!1sja!2sjp!4v1522294616873" title="東京駅 - Google マップ" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+              <div class="loading-indicator"></div>
+            </div>
+
+            <h3 id="2-4">Twitter埋め込み</h3>
+            <twitter-widget class="twitter-tweet twitter-tweet-rendered" id="twitter-widget-0" style="position: static; visibility: visible; display: block; transform: rotate(0deg); max-width: 100%; width: 500px; min-width: 220px; margin-top: 10px; margin-bottom: 10px;" data-tweet-id="976179651881127936"></twitter-widget> 
+
+            <h3 id="2-5">Instagram埋め込み</h3>
+            <iframe class="instagram-media instagram-media-rendered" id="instagram-embed-0" src="https://www.instagram.com/p/Bf0VnvfHvRs/embed/captioned/?cr=1&amp;v=8&amp;wp=1000&amp;rd=https%3A%2F%2Fgodios.simmon.design&amp;rp=%2Fusage%2Fdesign%2Fsummary%2F#%7B%22ci%22%3A0%2C%22os%22%3A8630.044999999882%7D" allowtransparency="true" allowfullscreen="true" frameborder="0" height="846" data-instgrm-payload-id="instagram-media-payload-0" scrolling="no" style="background: white; max-width: 658px; width: calc(100% - 2px); border-radius: 3px; border: 1px solid rgb(219, 219, 219); box-shadow: none; display: block; margin: 0px 0px 12px; min-width: 326px; padding: 0px;"></iframe> 
+
+            <h3 id="2-6">Facebook埋め込み</h3>
+            <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FJaguarJapan%2Fposts%2F1588210767926865&amp;width=500" width="500" height="432" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowtransparency="true"></iframe>
+
+            <h3 id="2-7">ブログカード</h3>
+            <aside class="blog-card">
+                <a href="https://godios.simmon.design/usage/feature/kusanagi-cache-clear/" class="bc-link">
+                    <div class="bc-img">
+                        <img width="320" height="320" src="https://godios.simmon.design/wp-content/uploads/2018/05/kusanagi-cache-clear-320x320.jpg" class="attachment-square-large size-square-large wp-post-image" alt="グリーンキウイ" srcset="https://godios.simmon.design/wp-content/uploads/2018/05/kusanagi-cache-clear-320x320.jpg 320w, https://godios.simmon.design/wp-content/uploads/2018/05/kusanagi-cache-clear-160x160.jpg 160w" sizes="(max-width: 320px) 100vw, 320px">
+                    </div>
+                    
+                    <div class="bc-content">
+                        <h3 class="bc-title">KUSANAGIのキャッシュクリア機能について</h3>
+                        <span class="bc-date">2018年5月14日</span>
+                    </div>
+                </a>
+            </aside>
+        </article>
+    </main>
+
+    <aside class="sidebar">
+        <div class="widget">
+            <p>ウィジェットのテスト</p>
+        </div>
+    </aside>
+    </div><!-- navigation-wrapper -->
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-pane copyright">
+                <p>&copy; {{Name}}.</p>
+            </div>
+        </div>
+    </footer>
 
     <!-- Scripts -->
     <script src="js/script.js"></script>
@@ -54,16 +319,16 @@
     <!-- SweetScroll -->
     <script src="https://unpkg.com/sweet-scroll/sweet-scroll.min.js"></script>
     <script>
-    	const sweetScroll = new SweetScroll({
-  			trigger: "a[href^='#']",
-  			offset: isPhone() ? -360 : -80,
-  			duration: 500
-		});
+        const sweetScroll = new SweetScroll({
+            trigger: "a[href^='#']",
+            offset: isPhone() ? -360 : -80,
+            duration: 500
+        });
     </script>
 
     <!-- SVG Effect -->
     <svg height="0" style="display: none;">
-	<filter id="drop-shadow">
+    <filter id="drop-shadow">
         <feGaussianBlur in="SourceAlpha" stdDeviation="4"></feGaussianBlur>
         <feColorMatrix result="matrixOut" in="offOut" type="matrix" values="1 0 0 0 0
                 0 1 0 0 0
@@ -75,6 +340,6 @@
             <feMergeNode in="SourceGraphic"></feMergeNode>
         </feMerge>
     </filter>
-	</svg>
+    </svg>
   </body>
 </html>

@@ -4,31 +4,20 @@
 	box-sizing: border-box;
 }
 
-h1,h2,h3,h4 {
-	transform: rotate(0.05deg);
-}
+// h1,h2,h3,h4 {
+// 	transform: rotate(0.05deg);
+// }
 
 body {
-	background-color: #FAFAF7;
-	background-repeat: repeat, no-repeat;
-	background-attachment: fixed;
-	background-size: 48px 48px, cover;
-	background-position: center center;
+	background-color: #F5F5F5;
 }
 
-img[lazy="loading"] {
-	max-width: 240px;
-	box-shadow: none !important;
-	animation: loading-icon 1s ease 0s infinite normal none running;
+a {
+	color: $link-color;
+	text-decoration: none;
 }
-
-@keyframes loading-icon {
-	0% {
-		transform: rotate(0deg);
-	}
-	100% {
-		transform: rotate(360deg);
-	}
+a:hover {
+	color: $link-color-hover;
 }
 
 @include mq(sp){

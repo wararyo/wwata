@@ -5,7 +5,8 @@
   "main": "gulpfile.js",
   "scripts": {
     "dev": "gulp start",
-    "dist": "gulp dist"
+    "dist": "gulp dist",
+    "build": "gulp build"
   },
   "repository": {
     "type": "git",
@@ -30,6 +31,10 @@
     "gulp-sass": "^4.0.2",
     "gulp-sass-glob": "^1.0.8",
     "gulp-uglify": "^3.0.0",
+    "node-sass-package-importer": "^5.3.1",
     "tar": "^4.4.8"
+  },
+  "dependencies": {
+    "ress": "^1.2.2"
   }
 }

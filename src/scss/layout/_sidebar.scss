@@ -1,0 +1,9 @@
+.sidebar {
+	width: $sidebar-width;
+
+	.widget {
+		margin-bottom: 24px;
+		background-color: $white;
+		border-radius: 2px;
+	}
+}
