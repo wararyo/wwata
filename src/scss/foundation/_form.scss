@@ -1,0 +1,57 @@
+input,
+textarea,
+select {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #f6f3f6;
+    border: none;
+    border-radius: 0;
+    margin-top: 2px;
+    outline: none;
+    padding: 10px;
+}
+
+input[type=radio] {
+    border-radius: 50%;
+    display: inline-block;
+    height: 16px;
+    margin: 0 5px -2px 0;
+    position: relative;
+    width: 16px;
+}
+
+input[type=radio]::before {
+    content: "";
+}
+
+input[type=radio]:checked::before {
+    background-color: #81a9d9;
+    border-radius: 50%;
+    height: 8px;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 8px;
+}
+
+textarea {
+    padding: 10px 11px;
+}
+
+button {
+    border: none;
+    outline: none;
+}
+
+input[type="submit"] {
+    background-color: #b3bfff;
+    color: #fff;
+    font-weight: 600;
+    -webkit-transition: box-shadow .3s 0s ease-in-out;
+	transition: box-shadow .3s 0s ease-in-out;
+}
+
+input[type="submit"]:hover {
+    box-shadow: 2px 2px 3px #aaa;
+}

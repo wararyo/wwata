@@ -1,0 +1,103 @@
+/*
+#overview
+Comment
+
+コメントおよびコメント投稿フォーム
+*/
+.comments {
+  margin-top: 24px;
+  padding: 16px;
+  background-color: $white;
+  border-radius: 2px;
+  box-shadow: 0 5px 10px rgba($black,.1);
+  h2 {
+    padding: 16px 24px;
+  }
+}
+
+.comments-head {
+  background-color: #fff;
+  padding: 20px 40px;
+  width: 100%;
+}
+
+.comment-list {
+  margin-bottom: 0;
+  margin-top: 5px;
+  padding: 0 48px;
+  li {
+    list-style-type: none;
+    border-bottom: 1px solid #EEE;
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+  > li > ul > li {
+    margin-left: 48px;
+    border-top: 1px dashed #EEE;
+  }
+}
+
+.comment-body {
+  background-color: #fff;
+  overflow-wrap: break-word;
+  padding: 24px;
+  word-wrap: break-word;
+  > p {
+    margin: 16px 16px 16px 36px;
+  }
+}
+
+.comment-author {
+  display: inline-block;
+  max-width: 70%;
+  vertical-align: top;
+  white-space: nowrap;
+}
+
+.comment-name {
+  font-size: 1.5rem;
+  line-height: 1.6;
+  max-width: 84%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.comment-date {
+  display: inline-block;
+  margin: 0 0 0 10px;
+  line-height: 1.8;
+  color: #aaa;
+  font-size: 1rem;
+}
+
+.reply {
+  text-align: right;
+}
+
+.avatar {
+  border-radius: 50%;
+  height: 55px;
+  width: 55px;
+}
+
+/* コメントフォーム */
+
+.comment-respond {
+  margin-top: 24px;
+  padding: 24px 48px;
+  background-color: $white;
+  border-radius: 2px;
+  box-shadow: 0 5px 10px rgba($black,.1);
+  h2 {
+      padding: 16px 0;
+  }
+}
+
+.comment-form label {
+  display: block;
+}
+
+.form-submit {
+  margin-top: 20px;
+}

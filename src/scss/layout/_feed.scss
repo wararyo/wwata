@@ -1,0 +1,88 @@
+/*
+#overview
+Feed
+
+サイトを購読してもらうための各種リンク
+*/
+
+.feed {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  .message {
+    text-align: center;
+    font-size: 0.8em;
+    width: 100%;
+  }
+}
+
+.feed-button {
+  color: #fff;
+  font-size: 3.0em;
+  margin-bottom: 8px;
+  line-height: 64px;
+  border-radius: 2px;
+  box-shadow: 0 5px 10px rgba($black, 0.1);
+  text-align: center;
+  .label {
+    font-size: 0.9rem;
+  }
+  .icon {
+    font-size: 0.9em;
+  }
+  p {
+    text-align: center;
+    vertical-align: center;
+    height: 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &.push {
+    width: 100%;
+    background-color: $feed-push-color;
+    transition: all 0.1s ease;
+    a {
+      color: #FFF;
+      transition: all 0.1s ease;
+    }
+    &:hover {
+      background-color: #FFF;
+    }
+    a:hover {
+      color: $feed-push-color;
+    }
+    &.is-subscribed {
+      background-color: #DDD;
+    }
+  }
+  &.is-subscribed a {
+    color: #777;
+  }
+  &.push.is-subscribed:hover {
+    background-color: #FFF;
+  }
+}
+
+.feedly {
+  width: calc(50% - 4px);
+  background-color: $feed-feedly-color;
+  color: #FFF;
+  transition: all 0.1s ease;
+  &:hover {
+    background-color: #FFF;
+    color: $feed-feedly-color;
+  }
+}
+
+.rss {
+  width: calc(50% - 4px);
+  background-color: $feed-rss-color;
+  color: #FFF;
+  transition: all 0.1s ease;
+  &:hover {
+    background-color: #FFF;
+    color: $feed-rss-color;
+  }
+}

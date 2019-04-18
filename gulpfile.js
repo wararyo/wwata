@@ -14,6 +14,7 @@ var scssfiles = "src/scss/**/*.scss";
 var imagefiles = "src/images/**";
 
 var proxyurl = "http://localhost:8888/wordpress/";
+var distBase = "";
 
 /*================*/
 
@@ -27,6 +28,7 @@ var uglify = require("gulp-uglify");
 var browser = require("browser-sync").create();
 var plumber = require('gulp-plumber');
 var notify = require('gulp-notify');
+var fileInclude = require('gulp-file-include');
 
 var usage = ['','Gulpfile Wordpress Project',
     'Usage: gulp [ start | frontnote | sass | js ]',
@@ -71,6 +73,7 @@ gulp.task("sass", function(done) {
 
 gulp.task("html", function(done) {
     gulp.src(htmlfiles)
+        .pipe(fileInclude())
         .pipe(gulp.dest("dist/"));
     done();
 });
