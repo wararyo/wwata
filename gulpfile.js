@@ -13,8 +13,8 @@ var jsfiles = "src/js/**/*.js";
 var scssfiles = "src/scss/**/*.scss";
 var imagefiles = "src/images/**";
 
-var proxyurl = "http://localhost:8888/wordpress/";
-var distBase = "";
+var proxyUrl = "localhost:8888/wordpress/";
+var distBase = "/Applications/MAMP/htdocs/wordpress/wp-content/themes/wwata/"; //must end with '/'
 
 /*================*/
 
@@ -45,7 +45,7 @@ var usage = ['','Gulpfile Wordpress Project',
  
 gulp.task("server", function(done) {
     browser.init({
-        server: "dist"
+        proxy: proxyUrl
     });
     done();
 });
@@ -67,27 +67,27 @@ gulp.task("sass", function(done) {
             outputStyle: isProduction?'compressed':'expanded'
         }))
         .pipe(autoprefixer())
-        .pipe(gulp.dest("dist/"));
+        .pipe(gulp.dest(distBase));
     done();
 });
 
 gulp.task("html", function(done) {
     gulp.src(htmlfiles)
         .pipe(fileInclude())
-        .pipe(gulp.dest("dist/"));
+        .pipe(gulp.dest(distBase));
     done();
 });
 
 gulp.task("image", function(done) {
     gulp.src(imagefiles)
-        .pipe(gulp.dest("dist/images/"));
+        .pipe(gulp.dest(distBase + "images/"));
     done();
 });
 
 gulp.task("frontnote", function(done) {
     gulp.src(scssfiles)
         .pipe(frontnote({
-                css: 'dist/style.css'
+                css: distBase + 'style.css'
             }));
     done();
 });
@@ -99,7 +99,7 @@ gulp.task("js", function(done) {
             title: "風変わりなJavaScriptどすなあ"
         })}))
         .pipe(uglify())
-        .pipe(gulp.dest("dist/js/"));
+        .pipe(gulp.dest(distBase + "js/"));
     done();
 });
 
@@ -115,7 +115,7 @@ gulp.task("start",gulp.series( gulp.parallel('dist','server'), function() {
     gulp.watch(scssfiles,gulp.task("sass"));
     gulp.watch(htmlfiles,gulp.task("html"));
     gulp.watch(imagefiles,gulp.task("image"));
-    gulp.watch("dist/**",{ delay: 500 },gulp.task("reload"));
+    gulp.watch(distBase+"**",{ delay: 500 },gulp.task("reload"));
 }));
 
 gulp.task('default', function() {

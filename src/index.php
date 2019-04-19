@@ -4,7 +4,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>{{Title}}</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <!-- OGP -->
     <head prefix="og: http://ogp.me/ns# website: http://ogp.me/ns/website#">
@@ -19,9 +18,13 @@
     <meta name="twitter:image" content="{{ogp}}" />
 
     <meta name="theme-color" content="{{color}}">
+
+    <!-- rss feed -->
+    <link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> RSS Feed" href="<?php bloginfo('rss2_url'); ?>" />
+
     <!-- Vue.js -->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
-
+    <?php wp_head(); ?>
   </head>
   <body>
     <header>
@@ -110,9 +113,6 @@
         </div>
     </footer>
 
-    <!-- Scripts -->
-    <script src="js/script.js"></script>
-
     <!-- SweetScroll -->
     <script src="https://unpkg.com/sweet-scroll/sweet-scroll.min.js"></script>
     <script>
@@ -138,5 +138,6 @@
         </feMerge>
     </filter>
     </svg>
+    <?php wp_footer() ?>
   </body>
 </html>
