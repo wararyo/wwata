@@ -1,9 +1,33 @@
 <?php
+
+if ( ! defined( 'ABSPATH' ) ) exit;
+
+define( 'CURRENT_THEME_NAME',  get_option( 'stylesheet' ) );
+define( 'THEME_VERSION',  wp_get_theme( 'wwata' )->Version );
+define( 'PARENT',  get_parent_theme_file_uri() );
+define( 'PARENT_CSS',  PARENT . '' );
+define( 'PARENT_JS',  PARENT . '/js' );
+define( 'PARENT_PATH',  get_parent_theme_file_path() );
+define( 'PARENT_INC',  PARENT_PATH . '/include' );
+define( 'PLACEHOLDER_IMAGE',  'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==' );
+
+/**** グローバル変数 ****/
+$wwata = get_option( 'theme_mods_' . CURRENT_THEME_NAME );
+
+$wwata['site_name'] = get_bloginfo( 'name' );
+$wwata['home_url'] = esc_url( get_home_url( null, '/' ) );
+
 /****  Script CSS読み込み  ****/
 function load_script_css(){
+  //デバッグ時はタイムスタンプをバージョンとする
+  //(キャッシュが残らないので開発しやすい)
+  $version = (defined('WP_DEBUG') && true === WP_DEBUG)?time():THEME_VERSION;
+
+  //jQueryは使わない！
   wp_deregister_script('jquery');
-  wp_enqueue_script( "main_script", get_template_directory_uri()."/js/script.js", array(), false, true );
-  wp_enqueue_style( "style", get_stylesheet_uri(), false );
+
+  wp_enqueue_script( "main_script", get_template_directory_uri()."/js/script.js", array(), $version, true );
+  wp_enqueue_style( "style", get_stylesheet_uri(), false, $version );
 }
 add_action('wp_enqueue_scripts', 'load_script_css');
 

@@ -22,7 +22,7 @@ article {
             z-index: -1;
             content: "";
             display: block;
-            background-color: rgba($black, .4);
+            background-color: rgba($black, .5);
             position: absolute;
             left: 0;
             top: 0;
@@ -70,10 +70,20 @@ article {
             text-shadow: 0 1px 2px rgba($black,.2);
             li {
                 list-style-type: none;
-                margin-left: 1.2rem;
                 &:first-child {
                     margin: 0;
                 }
+            }
+            > li:nth-of-type(n+2)::before {
+                content: "";
+                display: inline-block;
+                margin: 0 6px 0 5px;
+                height: 11px;
+                width: 10px;
+                vertical-align: middle;
+                transform: translateY(-1px);
+                background: url("data:image/svg+xml,%3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' height='10' width='10' viewBox='0 0 20 20'%3E%3Ctitle%3EArrow Right%3C/title%3E%3Cpath d='M5 20c-0.128 0-0.256-0.049-0.354-0.146-0.195-0.195-0.195-0.512 0-0.707l8.646-8.646-8.646-8.646c-0.195-0.195-0.195-0.512 0-0.707s0.512-0.195 0.707 0l9 9c0.195 0.195 0.195 0.512 0 0.707l-9 9c-0.098 0.098-0.226 0.146-0.354 0.146z' fill='%23fff'%3E%3C/path%3E%3C/svg%3E") no-repeat;
+                background-size: contain;
             }
             a {
                 color: $white;
@@ -206,7 +216,7 @@ article {
         }
         p:not(.wp-caption-text) {
             line-height: 1.6;
-            margin: 1.5em 0 0 0;
+            margin: 1em 0;
         }
         .iframe-wrap {
             background-color: #000;
