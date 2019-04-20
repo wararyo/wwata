@@ -6,12 +6,39 @@
 }
 
 .entry {
+	position: relative;
+	z-index: 0;
 	padding: 16px 0;
 	display: flex;
 	border-bottom: 1px solid rgba($black,.1);
 	color: $black;
+	transition: background-color .1s, box-shadow .1s, margin .1s, padding .1s;
 	&:last-child {
 		border: none;
+	}
+	&:hover {
+		z-index: 2;
+	}
+	&::before {
+		content: "";
+		z-index: -1;
+		display: block;
+		position: absolute;
+		left: -8px;
+		right: -8px;
+		top: 0;
+		bottom: 0;
+		background-color: $white;
+		opacity: 0;
+		box-shadow: 0 5px 10px rgba($black,.2);
+		transition: opacity .3s, all .1s;
+	}
+	&:hover::before {
+		left: -16px;
+		right: -16px;
+		top: -8px;
+		bottom: -8px;
+		opacity: 1;
 	}
 	.entry-image {
 		width: 320px;
@@ -25,14 +52,18 @@
 		flex-direction: column;
 		align-items: flex-start;
 	}
-	.entry-category {
-		display: inline-block;
-		padding: 2px 0.5rem;
-		font-size: 0.75rem;
-		background-color: $black;
-		color: $white;
-		border-radius: 0.25rem;
-	}
+    .entry-categories {
+        display: inline-flex;
+        li {
+        	margin-right: 1em;
+			padding: 2px 0.5rem;
+        	list-style-type: none;
+			font-size: 0.75rem;
+			background-color: #EEE;
+			color: #555;
+			border-radius: 0.25rem;
+        }
+    }
 	.entry-title {
 		margin-top: 8px;
 		font-size: 1.25rem;
@@ -42,6 +73,13 @@
 		margin: 8px 0;
 		flex: 1;
 		color: #888;
+		display: -webkit-box;
+	    //autoprefixerが-webkit-box-orientに対応していないため、一時的に無効化
+	    /* autoprefixer: off */
+	    -webkit-box-orient: vertical;
+	    /* autoprefixer: on */
+	    -webkit-line-clamp: 3;
+	    overflow: hidden;
 	}
 	.entry-footer {
 		align-self: flex-end;

@@ -11,9 +11,7 @@
           } ?>
           <h1><?=get_the_title();?></h1>
           <div class="article-meta">
-              <ul class="article-categories">
-                  <li><a href="https://godios.simmon.design/category/usage/design/">デザイン</a></li>
-              </ul>
+              <?php the_category() ?>
               <span class="created-date">2018年4月3日</span>
               <span class="updated-date">
               <time datetime="2018-05-31T12:20:17+09:00">2018年5月31日</time>

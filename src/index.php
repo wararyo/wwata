@@ -21,7 +21,11 @@
     } ?>
 
     <div class="entry-inner">
-      <span class="entry-category"><?php echo get_the_category()[0]->name; ?></span>
+      <ul class="entry-categories">
+        <?php foreach(get_the_category() as $category) { ?>
+          <li><?=$category->name?></li>
+        <?php } ?>
+      </ul>
       <h2 class="entry-title"><?php the_title(); ?></h2>
       <div class="entry-content">
         <?php the_excerpt(); ?>
