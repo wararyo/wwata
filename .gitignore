@@ -18,3 +18,4 @@ src/sftp-config.json
 *.sublime-workspace
 
 *.sublime-workspace
+*.code-workspace
