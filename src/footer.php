@@ -2,8 +2,15 @@
 
     <footer class="footer">
         <div class="footer-content">
-            <div class="footer-pane copyright">
-                <p>&copy; {{Name}}.</p>
+            <div class="footer-menu">
+            <?php wp_nav_menu(array(
+                'theme_location' => 'footer'
+            )); ?>
+            </div>
+            <div id="copyright" class="footer-pane copyright">
+                <?php global $wwata; ?>
+                &copy; <span itemprop="copyrightYear"><?php echo date( 'Y' ); ?></span> <a href="<?php echo $wwata['home_url'] ?>" target="_blank"><span itemprop="copyrightHolder" itemscope itemtype="http://schema.org/Organization"><span itemprop="name"><?php echo $wwata['site_name']; ?></span></span></a>
+                <p><a href="https://wwata.wararyo.com/" rel="noopener" target="_blank">Made by wwata Theme</a></p>
             </div>
         </div>
     </footer>

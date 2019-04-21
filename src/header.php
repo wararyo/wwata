@@ -1,3 +1,9 @@
+<?php
+
+global $wwata;
+
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -29,16 +35,21 @@
   <body>
     <header>
         <div class="header-inner">
-            <h1><a href="{{url}}">{{title}}</a></h1>
-            <span class="header-description">{{description}}</span>
+            <a href="<?php echo $wwata['home_url']; ?>" itemprop="url">
+                <?php $title_tag = is_singular() ? 'span': 'h1'; ?>
+                <?php if ( isset($wwata['header_img']) ) : ?>
+                    <<?php echo $title_tag; ?> class="site-logo"><?php echo '<img src="'.$wwata['header_img'].'" height="80" width="300" alt="logo" />'; ?></<?php echo $title_tag; ?>>
+                <?php else: ?>
+                    <<?php echo $title_tag; ?> class="site-title" itemprop="name"><?php echo $wwata['site_name']; ?></<?php echo $title_tag; ?>>
+                <?php endif; ?>
+            </a>
+            <span class="header-description"><?=get_bloginfo( 'description' )?></span>
         </div>
     </header>
     <a class="hamburger-mobile" onclick="toggleNav()"><img src="images/navigation/hamburger.svg" alt="メニュー"></a>
     <nav id="nav">
-        <ul>
-            <li><a href="#">トップ</a></li>
-            <li><a href="#">メニュー1</a></li>
-            <li><a href="#">メニュー2</a></li>
-        </ul>
+        <?php wp_nav_menu(array(
+            'theme_location' => 'nav'
+        )); ?>
     </nav>
     <div id="wrapper" class="wrapper">

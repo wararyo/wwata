@@ -56,3 +56,10 @@ function custom_attribute( $html ){
     $html = preg_replace('/(width|height)="\d*"\s/', '', $html);
     return $html;
 }
+
+/****  グローバルナビゲーション  ****/
+add_action( 'after_setup_theme', 'register_my_menu' );
+function register_my_menu() {
+  register_nav_menu( 'nav', 'グローバルナビゲーション' );
+  register_nav_menu( 'footer', 'フッター' );
+}
