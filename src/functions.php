@@ -50,16 +50,58 @@ $GLOBALS['comment'] = $comment;
 <?php
 }
 
+// サムネイルからwidth height を削除する
 add_filter( 'post_thumbnail_html', 'custom_attribute' );
 function custom_attribute( $html ){
-    // width height を削除する
     $html = preg_replace('/(width|height)="\d*"\s/', '', $html);
     return $html;
 }
 
-/****  グローバルナビゲーション  ****/
+/****  ナビゲーション  ****/
 add_action( 'after_setup_theme', 'register_my_menu' );
 function register_my_menu() {
   register_nav_menu( 'nav', 'グローバルナビゲーション' );
   register_nav_menu( 'footer', 'フッター' );
 }
+
+/**** ウィジェット ****/
+if (function_exists('register_sidebar')) {
+	register_sidebar(array(
+		'name' => 'サイドバー',
+		'id' => 'sidebar',
+		'before_widget' => "<div class='widget'>",
+		'after_widget' => "</div>",
+		'before_title' => "<h3 class='widget-header'>",
+		'after_title' => '</h3>'
+	));
+
+	register_sidebar(array(
+		'name' => 'サイドバー(スクロールに追従)',
+		'id' => 'sidebar-sticky',
+		'before_widget' => "<div class='widget'>",
+		'after_widget' => "</div>",
+		'before_title' => "<h3 class='widget-header'>",
+		'after_title' => '</h3>'
+	));
+
+	register_sidebar(array(
+		'name' => 'フッター右',
+		'id' => 'footer-right',
+		'before_widget' => "<div class='widget'>",
+		'after_widget' => "</div>",
+		'before_title' => "<h3 class='widget-header'>",
+		'after_title' => '</h3>'
+	));
+
+	register_sidebar(array(
+		'name' => 'フッター左',
+		'id' => 'footer-left',
+		'before_widget' => "<div class='widget'>",
+		'after_widget' => "</div>",
+		'before_title' => "<h3 class='widget-header'>",
+		'after_title' => '</h3>'
+	));
+}
+
+/****  サムネイルサポート  ****/
+add_theme_support('post-thumbnails'); 

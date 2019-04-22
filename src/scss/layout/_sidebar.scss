@@ -7,6 +7,10 @@ Sidebar
 
 .sidebar {
 	width: $sidebar-width;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: stretch;
 
 	.widget {
 		margin-bottom: 24px;
@@ -14,6 +18,14 @@ Sidebar
 		background-color: $white;
 		border-radius: 2px;
 		box-shadow: 0 5px 10px rgba($black,.1);
+		.widget-header {
+			margin-bottom: 0.75em;
+			text-align: center;
+		}
+	}
+	.sticky {
+		position: sticky;
+		top: 24px;
 	}
 }
 

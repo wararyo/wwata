@@ -7,7 +7,11 @@
                 'theme_location' => 'footer'
             )); ?>
             </div>
-            <div id="copyright" class="footer-pane copyright">
+            <div class="pane-container">
+                <div class="pane"><?php dynamic_sidebar('footer-left'); ?></div>
+                <div class="pane"><?php dynamic_sidebar('footer-right'); ?></div>
+            </div>
+            <div id="copyright" class="copyright">
                 <?php global $wwata; ?>
                 &copy; <span itemprop="copyrightYear"><?php echo date( 'Y' ); ?></span> <a href="<?php echo $wwata['home_url'] ?>" target="_blank"><span itemprop="copyrightHolder" itemscope itemtype="http://schema.org/Organization"><span itemprop="name"><?php echo $wwata['site_name']; ?></span></span></a>
                 <p><a href="https://wwata.wararyo.com/" rel="noopener" target="_blank">Made by wwata Theme</a></p>
@@ -17,13 +21,6 @@
 
     <!-- SweetScroll -->
     <script src="https://unpkg.com/sweet-scroll/sweet-scroll.min.js"></script>
-    <script>
-        const sweetScroll = new SweetScroll({
-            trigger: "a[href^='#']",
-            offset: isPhone() ? -360 : -80,
-            duration: 500
-        });
-    </script>
 
     <!-- SVG Effect -->
     <svg height="0" style="display: none;">

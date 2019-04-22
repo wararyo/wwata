@@ -26,7 +26,8 @@
       </a>
     </div>
   </div>
-  <div class="widget">
-      <p>ウィジェットのテスト</p>
+  <?php dynamic_sidebar('sidebar'); ?>
+  <div class="sticky">
+    <?php dynamic_sidebar('sidebar-sticky'); ?>
   </div>
 </aside>
