@@ -23,3 +23,16 @@ var sweetScroll = new SweetScroll({
     offset: isPhone() ? -360 : -80,
     duration: 500
 });
+
+//TOC開閉
+var toc = document.getElementById("toc_container")
+toc.setAttribute(":class", "{'is-open':isOpen}")
+toc.setAttribute("v-on:click","isOpen = !isOpen");
+toc.getElementsByTagName('ul')[0].setAttribute("v-if","isOpen");
+console.log(document.getElementById("toc_container"));
+var v_toc = new Vue({
+    el: '#toc_container',
+    data: {
+      isOpen: false
+    }
+});
