@@ -16,7 +16,7 @@ CSSリセットのRessとは別に全体の見た目を指定しています。
 // }
 
 body {
-	background-color: #F5F5F5;
+	background-color: $background-color;
 }
 
 a {

@@ -52,4 +52,7 @@ global $wwata;
             'theme_location' => 'nav'
         )); ?>
     </nav>
+    <div id="go-to-top" class="go-to-top" :class="{'is-shown':isShown}">
+        <a href="#">↑</a>
+    </div>
     <div id="wrapper" class="wrapper">

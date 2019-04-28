@@ -35,3 +35,21 @@ var v_toc = new Vue({
       isOpen: false
     }
 });
+
+var v_goToTop = new Vue({
+  el: '#go-to-top',
+  data: {
+    isShown: true
+  },
+  mounted: function() {
+    window.addEventListener('scroll',this.onScroll);
+  },
+  beforeDestroy: function() {
+    window.removeEventListener('scroll',this.onScroll);
+  },
+  methods: {
+    onScroll: function() {
+      this.isShown = (window.pageYOffset > window.innerHeight);
+    }
+  }
+});
