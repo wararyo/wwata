@@ -6,7 +6,12 @@ Header
 */
 
 header {
-	background-color: $primary-color;
+	padding: 16px 0;
+	text-align: center;
+	background: $header-background;
+	border-bottom: 3px solid $primary-color;
+	color: $header-text;
+
 	.header-inner {
 		max-width: 1280px;
 		width: calc(100% - 64px);
@@ -15,14 +20,17 @@ header {
 	}
 	.site-title {
 		display: block;
-		font-weight: bold;
+		font-weight: normal;
 		font-size: 2em;
+		text-shadow: 0px 3px 6px rgba($black,.2);
 	}
 	.header-description {
-		font-size: 0.75rem;
+		font-size: 0.8rem;
+		color: rgba($header-text,.8);
+		text-shadow: 0px 1px 2px rgba($black,.2);
 	}
 	a {
-		color: $black;
+		color: $header-text;
 		text-decoration: none;
 	}
 }

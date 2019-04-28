@@ -23,6 +23,9 @@ $link-color: #62310F;
 $link-color-hover: #63030F;
 
 $background-color: #F5F5F5;
+$header-background: rgba(desaturate(lighten($primary-color,30%),30%),.3);
+$header-text: desaturate(darken($primary-color,35%),40%);
+$navigation-background: desaturate(darken($primary-color,30%),30%);
 $footer-color: #222;
 
 $feed-push-color: #edab28;

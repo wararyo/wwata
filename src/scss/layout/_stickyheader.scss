@@ -16,8 +16,8 @@
         transform: translateY(0);
     }
     .sticky-header-inner {
-        max-width: 1280px;
-        width: calc(100% - 48px);
+        max-width: 1280-48px;
+        width: calc(100% - 64px);
         height: 100%;
         margin: 0 auto;
         display: flex;

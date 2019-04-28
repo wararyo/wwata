@@ -59,7 +59,7 @@ var v_goToTop = new Vue({
 var v_stickyHeader = new Vue({
   el: '#sticky-header',
   data: {
-    isShown: true
+    isShown: false
   },
   mounted: function() {
     window.addEventListener('scroll',this.onScroll);
