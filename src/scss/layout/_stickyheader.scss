@@ -1,0 +1,52 @@
+.sticky-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 56px;
+    z-index: 100;
+    border-bottom: 3px solid $primary-color;
+    background-color: $white;
+    box-shadow: 0 5px 10px rgba($black,.1);
+    transform: translateY(-100%);
+    opacity: 0;
+    transition: .2s;
+    &.is-shown {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    .sticky-header-inner {
+        max-width: 1280px;
+        width: calc(100% - 48px);
+        height: 100%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .sticky-header-title {
+        font-weight: bold;
+    }
+    .share {
+        display: flex;
+        align-items: center;
+        font-size: 0.75rem;
+        color: #555;
+        > span {
+            margin: 0 16px;
+        }
+        .share-buttons {
+            height: 100%;
+            display: flex;
+            align-items: stretch;
+            font-size: 1.75rem;
+            a {
+                color: #555;
+                padding: 0 4px;
+            }
+        }
+        .share-button {
+
+        }
+    }
+}

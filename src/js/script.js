@@ -26,18 +26,38 @@ var sweetScroll = new SweetScroll({
 
 //TOC開閉
 var toc = document.getElementById("toc_container")
-toc.setAttribute(":class", "{'is-open':isOpen}")
-toc.setAttribute("v-on:click","isOpen = !isOpen");
-toc.getElementsByTagName('ul')[0].setAttribute("v-if","isOpen");
-var v_toc = new Vue({
-    el: '#toc_container',
-    data: {
-      isOpen: false
-    }
-});
+if(toc != void 0) {
+  toc.setAttribute(":class", "{'is-open':isOpen}")
+  toc.setAttribute("v-on:click","isOpen = !isOpen");
+  toc.getElementsByTagName('ul')[0].setAttribute("v-if","isOpen");
+  var v_toc = new Vue({
+      el: '#toc_container',
+      data: {
+        isOpen: false
+      }
+  });
+}
 
 var v_goToTop = new Vue({
   el: '#go-to-top',
+  data: {
+    isShown: true
+  },
+  mounted: function() {
+    window.addEventListener('scroll',this.onScroll);
+  },
+  beforeDestroy: function() {
+    window.removeEventListener('scroll',this.onScroll);
+  },
+  methods: {
+    onScroll: function() {
+      this.isShown = (window.pageYOffset > window.innerHeight);
+    }
+  }
+});
+
+var v_stickyHeader = new Vue({
+  el: '#sticky-header',
   data: {
     isShown: true
   },
