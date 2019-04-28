@@ -19,9 +19,6 @@
         </div>
     </footer>
 
-    <!-- SweetScroll -->
-    <script src="https://unpkg.com/sweet-scroll/sweet-scroll.min.js"></script>
-
     <!-- SVG Effect -->
     <svg height="0" style="display: none;">
     <filter id="drop-shadow">

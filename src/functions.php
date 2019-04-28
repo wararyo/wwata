@@ -26,6 +26,7 @@ function load_script_css(){
   //jQueryは使わない！
   wp_deregister_script('jquery');
 
+  wp_enqueue_script( "sweet_scroll", get_template_directory_uri()."/js/sweet-scroll.js", array(), $version, true );
   wp_enqueue_script( "main_script", get_template_directory_uri()."/js/script.js", array(), $version, true );
   wp_enqueue_style( "style", get_stylesheet_uri(), false, $version );
 }

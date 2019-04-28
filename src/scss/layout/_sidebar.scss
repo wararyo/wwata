@@ -26,6 +26,9 @@ Sidebar
 	.sticky {
 		position: sticky;
 		top: 24px;
+		.widget:last-child {
+			margin-bottom: 0;
+		}
 	}
 }
 
